@@ -1,0 +1,36 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<button class={className} {...rest}>
+  <slot />
+</button>
+
+<style lang="scss">
+  button {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 1.75rem;
+    cursor: pointer;
+    max-width: fit-content;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .orange {
+    background-color: var(--accent-orange);
+    color: white;
+    transition: box-shadow 0.4s;
+
+    &:hover {
+      box-shadow: 0px 3px 16px var(--accent-orange);
+    }
+  }
+
+  .transparent {
+    color: var(--accent-orange);
+    background-color: transparent;
+    padding: 0.5rem 0;
+  }
+</style>
