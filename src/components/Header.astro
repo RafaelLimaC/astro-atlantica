@@ -26,6 +26,14 @@ import Button from "./Button.astro";
           />
           Entre em contato
         </Button>
+        <Button class="white">
+          <img
+            class="nav-cta__img"
+            src="/icons/list-blue.svg"
+            alt="Cadastre-se"
+          />
+          Cadastre-se
+        </Button>
       </div>
       <div>
         <ul class="social-list">
@@ -98,7 +106,7 @@ import Button from "./Button.astro";
 
     .header-nav__ul {
       display: flex;
-      gap: 2.34vw;
+      gap: 3.75vw;
 
       li a {
         color: var(--color-dark);
@@ -218,7 +226,10 @@ import Button from "./Button.astro";
     }
 
     .nav-cta {
-      display: block;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
