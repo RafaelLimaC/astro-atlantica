@@ -1,4 +1,4 @@
-import Input from "../input/Input";
+import { Input } from "../input/Input";
 
 export default function RegisterForm() {
   return (
@@ -11,9 +11,9 @@ export default function RegisterForm() {
         <Input label="Ramo de atividade" />
       </div>
 
-      <div className="grid grid-cols-1 gap-[0.625rem] md:grid-cols-9">
-        <Input label="CNPJ" />
-        <Input label="Endereço completo" className="" />
+      <div className="grid grid-cols-1 gap-[0.625rem] md:grid-cols-9 mt-[1.25rem]">
+        <Input label="CNPJ" labelFor="CPNJ" id="CPNJ" className="col-auto md:col-span-3" />
+        <Input label="Endereço completo" className="col-auto md:col-span-6" labelFor="address" id="address" />
       </div>
     </div>
   );
