@@ -18,22 +18,10 @@ import Button from "./Button.astro";
         <li><a href="/#">Depoimentos</a></li>
       </ul>
       <div class="nav-cta">
-        <Button class="primary">
-          <img
-            class="nav-cta__img"
-            src="/icons/envelope-white.svg"
-            alt="Entre em contato"
-          />
+        <Button class="primary" src="/icons/envelope-white.svg">
           Entre em contato
         </Button>
-        <Button class="white">
-          <img
-            class="nav-cta__img"
-            src="/icons/list-blue.svg"
-            alt="Cadastre-se"
-          />
-          Cadastre-se
-        </Button>
+        <Button class="white" src="/icons/list-blue.svg"> Cadastre-se </Button>
       </div>
       <div>
         <ul class="social-list">
@@ -57,22 +45,10 @@ import Button from "./Button.astro";
       </div>
     </nav>
     <div class="header-cta">
-      <Button class="primary">
-        <img
-          class="header-cta__img"
-          src="/icons/envelope-white.svg"
-          alt="Entre em contato"
-        />
+      <Button class="primary" src="/icons/envelope-white.svg">
         Entre em contato
       </Button>
-      <Button class="white">
-        <img
-          class="nav-cta__img"
-          src="/icons/list-blue.svg"
-          alt="Cadastre-se"
-        />
-        Cadastre-se
-      </Button>
+      <Button class="white" src="/icons/list-blue.svg"> Cadastre-se </Button>
     </div>
     <button class="header-menu__button" id="btnMenuMobile">
       <img
@@ -163,11 +139,6 @@ import Button from "./Button.astro";
   .header-cta,
   .nav-cta {
     display: none;
-    .header-cta__img,
-    .nav-cta__img {
-      height: 16px;
-      margin-right: 0.75rem;
-    }
   }
 
   .header-menu__button {

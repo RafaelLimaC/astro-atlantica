@@ -1,8 +1,9 @@
 ---
-const { class: className, ...rest } = Astro.props;
+const { class: className, src, ...rest } = Astro.props;
 ---
 
 <button class={className} {...rest}>
+  <img src={src} alt="Icon" />
   <slot />
 </button>
 
@@ -18,6 +19,11 @@ const { class: className, ...rest } = Astro.props;
     align-items: center;
     font-weight: 300;
     font-family: "Poppins", sans-serif;
+
+    img {
+      height: 16px;
+      margin-right: 0.75rem;
+    }
   }
 
   .primary {
@@ -42,9 +48,9 @@ const { class: className, ...rest } = Astro.props;
       background-color: var(--blue-primary);
       color: white;
 
-      * {
-        filter: invert(31%) sepia(90%) saturate(2257%) hue-rotate(220deg)
-          brightness(105%) contrast(98%);
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+          saturate(0%) hue-rotate(143deg) brightness(103%) contrast(102%);
       }
     }
   }
