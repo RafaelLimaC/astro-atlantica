@@ -8,7 +8,7 @@ const { class: className, ...rest } = Astro.props;
 
 <style lang="scss">
   button {
-    padding: 1rem 1.5rem;
+    padding: 0.875rem 1.5rem;
     border: none;
     border-radius: 1.75rem;
     cursor: pointer;
@@ -23,7 +23,7 @@ const { class: className, ...rest } = Astro.props;
   .primary {
     background-color: var(--blue-primary);
     color: white;
-    transition: box-shadow 0.4s;
+    transition: background-color 0.2s;
 
     &:hover {
       background-color: var(--blue-secondary);
@@ -33,10 +33,16 @@ const { class: className, ...rest } = Astro.props;
   .white {
     color: var(--blue-primary);
     background-color: transparent;
-    outline: 1px solid var(--blue-primary);
+    outline: 2px solid var(--blue-primary);
+    transition:
+      color 0.3s,
+      background-color 0.3s;
 
     &:hover {
-      img {
+      background-color: var(--blue-primary);
+      color: white;
+
+      * {
         filter: invert(31%) sepia(90%) saturate(2257%) hue-rotate(220deg)
           brightness(105%) contrast(98%);
       }

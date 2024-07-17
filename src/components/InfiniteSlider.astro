@@ -1,0 +1,79 @@
+---
+
+---
+
+<div class="slider">
+  <div class="slide-track">
+    <div class="slide">
+      <img src="/infinite-slider/Accumed-logo.png" alt="" />
+    </div>
+    <div class="slide">
+      <img src="/infinite-slider/Cremer-logo.png" alt="" />
+    </div>
+    <div class="slide">
+      <img src="/infinite-slider/Equiplex-logo.png" alt="" />
+    </div>
+    <div class="slide">
+      <img src="/infinite-slider/Fresenius_Kabi-logo.png" alt="" />
+    </div>
+    <div class="slide">
+      <img src="/infinite-slider/Geolab-logo.png" alt="" />
+    </div>
+    <div class="slide">
+      <img src="/infinite-slider/Hipolabor-logo.png" alt="" />
+    </div>
+    <div class="slide">
+      <img src="/infinite-slider/Kolplast-logo.png" alt="" />
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .slider {
+    background: var(--blue-primary);
+    width: 100%;
+
+    display: flex;
+    gap: 5rem;
+    padding: 2rem 0;
+    overflow: hidden;
+
+    &:hover {
+      .slide-track {
+        animation-play-state: paused;
+      }
+    }
+
+    .slide-track {
+      animation: scroll 30s linear infinite;
+      display: flex;
+      gap: 5rem;
+    }
+
+    .slide {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // Animation
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1990px);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .slider {
+      padding: 2.5rem 0;
+    }
+  }
+</style>
+
+<script>
+  const copy = document.querySelector(".slide-track").cloneNode(true);
+  document.querySelector(".slider").appendChild(copy);
+</script>
