@@ -12,8 +12,8 @@ export default function RegisterForm() {
     <div className="mb-36 mt-[3.75rem] flex w-full max-w-[62rem] flex-col">
       <form
         onSubmit={handleSubmit}
-        action="https://formspree.io/f/xldrdvrz"
-        method="POST"
+      // action="https://formspree.io/f/xldrdvrz"
+      // method="POST"
       >
         <h3 className="mb-[1.25rem] text-2xl font-bold uppercase">
           Dados da empresa
@@ -26,6 +26,7 @@ export default function RegisterForm() {
             labelFor="nomeFantasia"
             id="nomeFantasia"
             name="nomeFantasia"
+            required
           />
           <Input
             label="Ramo de atividade"
@@ -219,6 +220,7 @@ export default function RegisterForm() {
           <button
             className="bg-lightBlue w-full max-w-[20rem] rounded-[1.688rem] py-[0.875rem] text-base text-white"
             type="submit"
+            disabled={state.submitting}
           >
             Enviar
           </button>

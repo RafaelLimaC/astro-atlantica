@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import RegisterForm from "../components/form/register-form";
+import FormProvider from "../layouts/form-provider.jsx";
 ---
 
 <Layout title="Atlântico - Cadastro para clientes">
@@ -9,8 +9,8 @@ import RegisterForm from "../components/form/register-form";
   <main class="main_content">
     <img id="headerLogo" class="header-logo" src="/logo-black.svg" alt="Logo" />
     <h1 class="header__register">Cadastro para clientes</h1>
-
-    <RegisterForm />
+  
+    <FormProvider />
   </main>
 </Layout>
 
