@@ -6,6 +6,7 @@ export default {
       colors: {
         light: "#fefefe",
         gray8b: "#8b8b8b",
+        lightBlue: "#466ffd",
       },
     },
   },
