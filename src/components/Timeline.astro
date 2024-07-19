@@ -193,7 +193,7 @@
         position: relative;
 
         &--year {
-          opacity: 0.5;
+          opacity: 0.3;
           text-align: left;
           margin-left: 3.5rem;
 
@@ -212,7 +212,7 @@
         }
 
         &--text {
-          opacity: 0.5;
+          opacity: 0.3;
           margin-left: 3.5rem;
 
           p {
@@ -276,3 +276,34 @@
     }
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".timeline__item").forEach((item) => {
+    gsap.to((item as HTMLElement).querySelector(".timeline__item--year"), {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: item as HTMLElement,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+
+  gsap.utils.toArray(".timeline__item").forEach((item) => {
+    gsap.to((item as HTMLElement).querySelector(".timeline__item--text"), {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: item as HTMLElement,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
+</script>
