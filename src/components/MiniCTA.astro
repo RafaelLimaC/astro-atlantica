@@ -16,6 +16,44 @@ import Button from "./Button.astro";
   </div>
 </div>
 
+<div class="cards__wrapper">
+  <h5 class="cards__title">
+    Excelência em Distribuição de Insumos Hospitalares e Medicamentos
+  </h5>
+  <div class="cards">
+    <div class="cards__container">
+      <div class="cards__image">
+        <img src="/icons/mini-cta-material.svg" alt="" />
+      </div>
+      <h6>Material Hospitalar</h6>
+      <p>
+        Materiais hospitalares essenciais, de alta qualidade e segurança, para
+        atender todas as necessidades médicas.
+      </p>
+    </div>
+    <div class="cards__container">
+      <div class="cards__image">
+        <img src="/icons/mini-cta-medicamentos.svg" alt="" />
+      </div>
+      <h6>Medicamentos</h6>
+      <p>
+        Distribuição de medicamentos de qualidade para hospitais, clínicas e
+        farmácias, atendendo todas as suas demandas.
+      </p>
+    </div>
+    <div class="cards__container">
+      <div class="cards__image">
+        <img src="/icons/mini-cta-seringa.svg" alt="" />
+      </div>
+      <h6>Outros Produtos</h6>
+      <p>
+        Insumos laboratoriais e produtos médicos inovadores para laboratórios,
+        clínicas veterinárias e diversas necessidades.
+      </p>
+    </div>
+  </div>
+</div>
+
 <style lang="scss">
   .mini-cta__wrapper {
     display: flex;
@@ -59,6 +97,62 @@ import Button from "./Button.astro";
     }
   }
 
+  .cards__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 0 1rem 3rem 1rem;
+
+    h5 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--color-dark);
+      max-width: 76rem;
+      line-height: 1.5;
+      padding-bottom: 3rem;
+    }
+
+    .cards {
+      max-width: 102rem;
+      width: 100%;
+
+      display: grid;
+      grid-gap: max(1rem, 2.5vw);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+
+      .cards__container {
+        border-radius: 1.5rem;
+        padding: 3rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .cards__image {
+          background-color: var(--blue-primary);
+          width: fit-content;
+          padding: 1.25rem;
+          border-radius: 1rem;
+        }
+
+        h6 {
+          font-weight: 700;
+          font-size: 1.25rem;
+          color: var(--color-dark);
+        }
+
+        p {
+          color: var(--color-gray);
+          font-size: 1.125rem;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+
   @media screen and (min-width: 900px) {
     .mini-cta__wrapper {
       padding: 6rem 1rem;
@@ -78,6 +172,25 @@ import Button from "./Button.astro";
         &__buttons {
           flex-direction: row;
           gap: 1rem;
+        }
+      }
+    }
+
+    .cards__wrapper {
+      padding: 0 1rem 6rem 1rem;
+
+      h5 {
+        font-size: 3.25rem;
+        font-weight: 600;
+        line-height: 1.2;
+        padding-bottom: 6rem;
+      }
+
+      .cards {
+        .cards__container {
+          h6 {
+            font-size: 2rem;
+          }
         }
       }
     }
