@@ -51,7 +51,7 @@ const { class: className, src, ...rest } = Astro.props;
 
   .white {
     color: var(--blue-primary);
-    background-color: transparent;
+    background-color: white;
     border: 2px solid var(--blue-primary);
     transition:
       color 0.3s,
@@ -98,6 +98,47 @@ const { class: className, src, ...rest } = Astro.props;
 
     &:hover {
       box-shadow: rgba(255, 255, 255, 0.288) 0px 8px 16px;
+    }
+  }
+
+  .white-bg__blue-text {
+    color: var(--blue-primary);
+    background-color: white;
+    transition:
+      color 0.3s,
+      background-color 0.3s,
+      box-shadow 0.3s;
+
+    img {
+      filter: var(--filter-blue-primary);
+    }
+
+    &:hover {
+      box-shadow: rgba(255, 255, 255, 0.288) 0px 8px 16px;
+    }
+  }
+
+  .blue-bg__white-text {
+    color: white;
+    background-color: var(--blue-primary);
+    border: 2px solid white;
+    transition:
+      color 0.3s,
+      background-color 0.3s,
+      box-shadow 0.3s;
+
+    img {
+      filter: var(--filter-white);
+    }
+
+    &:hover {
+      background-color: white;
+      color: var(--blue-primary);
+      box-shadow: rgba(255, 255, 255, 0.288) 0px 8px 16px;
+
+      img {
+        filter: var(--filter-blue-primary);
+      }
     }
   }
 </style>

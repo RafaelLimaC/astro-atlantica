@@ -6,7 +6,7 @@
   <h4>Nossa Equipe de Especialistas</h4>
   <div class="team">
     <div class="team-cards">
-      <img src="/time/milena-monsores.png" alt="" />
+      <img class="team-cards__image" src="/time/milena-monsores.png" alt="" />
       <div class="team-cards__info">
         <p>Milena Monsores</p>
         <span>Farmacêutica</span>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="team-cards">
-      <img src="/time/lais-loureiro.png" alt="" />
+      <img class="team-cards__image" src="/time/lais-loureiro.png" alt="" />
       <div class="team-cards__info">
         <p>Laís Loureiro</p>
         <span>Financeiro</span>
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="team-cards">
-      <img src="/time/josiani-da-silva.png" alt="" />
+      <img class="team-cards__image" src="/time/josiani-da-silva.png" alt="" />
       <div class="team-cards__info">
         <p>Josiani da Silva</p>
         <span>Compras</span>
@@ -73,20 +73,19 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-    padding: 5rem 0;
     background-color: white;
+    padding: 3rem 0;
 
     h4 {
-      font-size: 3.25rem;
-      font-weight: 600;
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 2rem 0 1rem 0;
       color: var(--color-dark);
       text-align: center;
     }
 
     .team {
       display: flex;
-      gap: 2rem;
       flex-wrap: wrap;
       justify-content: center;
 
@@ -94,12 +93,42 @@
         overflow: hidden;
         width: fit-content;
 
-        img {
+        &__info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+
+          p {
+            font-size: 1.5rem;
+            color: var(--color-dark);
+            font-weight: 700;
+          }
+
+          span {
+            font-size: 1.125rem;
+            color: var(--color-dark);
+            font-weight: 400;
+          }
+
+          &--social {
+            display: flex;
+            gap: 0.65rem;
+          }
         }
       }
     }
   }
 
   @media screen and (min-width: 900px) {
+    section {
+      padding: 3rem 0 10rem 0;
+
+      h4 {
+        font-size: 3.25rem;
+        font-weight: 600;
+        padding: 5rem 0;
+      }
+    }
   }
 </style>

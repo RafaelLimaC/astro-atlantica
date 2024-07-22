@@ -11,6 +11,9 @@ dependencies:
   gsap:
     specifier: ^3.12.5
     version: 3.12.5
+  swiper:
+    specifier: ^11.1.5
+    version: 11.1.5
 
 devDependencies:
   sass:
@@ -2915,6 +2918,11 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       has-flag: 3.0.0
+    dev: false
+
+  /swiper@11.1.5:
+    resolution: {integrity: sha512-JJQWFXdxiMGC2j6ZGTYat5Z7NN9JORJBgHp0/joX9uPod+cRj0wr5H5VnWSNIz9JeAamQvYKaG7aFrGHIF9OEg==}
+    engines: {node: '>= 4.7.0'}
     dev: false
 
   /to-fast-properties@2.0.0:

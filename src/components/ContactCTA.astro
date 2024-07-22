@@ -1,0 +1,76 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="cta-contact__wrapper">
+  <div class="cta-contact">
+    <h4>Entre em contato e agende uma reunião</h4>
+    <div class="cta-contact__buttons">
+      <Button class="white-bg__blue-text" src="/icons/envelope.svg">
+        Entre em contato
+      </Button>
+      <Button class="blue-bg__white-text" src="/icons/list.svg">
+        Cadastre-se
+      </Button>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .cta-contact__wrapper {
+    background-color: var(--blue-primary);
+    background-image: url("contact-cta.png");
+    background-repeat: no-repeat;
+    background-position: -100px 0%;
+    display: flex;
+    justify-content: center;
+
+    .cta-contact {
+      padding: 4rem 1rem;
+      max-width: 91rem;
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      flex-direction: column;
+      gap: 3rem;
+
+      h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: white;
+        max-width: 11ch;
+        line-height: 1.5;
+      }
+
+      &__buttons {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .cta-contact__wrapper {
+      background-position: 700px 0%;
+      .cta-contact {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+
+        h4 {
+          font-size: 3.25rem;
+          max-width: 17ch;
+        }
+
+        &__buttons {
+          flex-direction: row;
+          gap: 0.65rem;
+        }
+      }
+    }
+  }
+</style>
