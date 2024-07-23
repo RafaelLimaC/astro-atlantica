@@ -3,19 +3,25 @@ import "swiper/css";
 ---
 
 <section class="depoimentos">
-  <div class="swiper">
+  <div class="swiper swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="swiper-content">
-          <h4>Clientes</h4>
+          <div class="swiper-content__details">
+            <img src="/swiper/swiper-aspas.svg" alt="Aspas" />
+            <img src="/swiper/swiper-stars.svg" alt="5 estrelas" />
+          </div>
           <p>
-            “Fica a minha recomendação à empresa e os meus parabéns à equipe
-            pelo serviço de excelência que apresentam."
+            Atendimento com equipe nota dez, treinada, qualificada em
+            atendimento e prestação de serviços com os seus clientes, excelente
+            opção de fornecedor para que você possa incluir na sua lista de
+            prestadores de serviços e pode indicar para os seus amigos e
+            familiares. 05 estelas!
           </p>
           <div class="swiper__slide-cliente">
-            <img src="/swiper/Leticia Mendonca.png" alt="" />
+            <img src="/swiper/cleber-coutinho.png" alt="" />
             <div>
-              <span>Letícia Mendonça Cardoso</span>
+              <span>Cleber Coutinho</span>
               <span>Google Review</span>
             </div>
           </div>
@@ -23,48 +29,63 @@ import "swiper/css";
       </div>
       <div class="swiper-slide">
         <div class="swiper-content">
-          <h4>Clientes</h4>
+          <div class="swiper-content__details">
+            <img src="/swiper/swiper-aspas.svg" alt="Aspas" />
+            <img src="/swiper/swiper-stars.svg" alt="5 estrelas" />
+          </div>
           <p>
-            “Ficamos muito satisfeitos com o trabalho realizado pela empresa.
-            Recebemos muita atenção em todos os detalhes e o resultado final não
-            podia ter sido melhor."
+            Se você está a procura de Profissionais capacitados e atenciosos,
+            com toda certeza você encontra na Novamed! Muito sucesso a empressa,
+            Sr. Mariano pessoa excelentissima sempre disposto a ajudar e melhor
+            atender, parabens a toda equipe!
           </p>
           <div class="swiper__slide-cliente">
-            <img src="/swiper/Isabela Farha.png" alt="" />
+            <img src="/swiper/anne-gomes.png" alt="" />
             <div>
-              <span>Isabela Farha</span>
-              <span>Risco Rabisco</span>
+              <span>Anne Gomes</span>
+              <span>Google Review</span>
             </div>
           </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="swiper-content">
-          <h4>Clientes</h4>
+          <div class="swiper-content__details">
+            <img src="/swiper/swiper-aspas.svg" alt="Aspas" />
+            <img src="/swiper/swiper-stars.svg" alt="5 estrelas" />
+          </div>
           <p>
-            “Compromisso e qualidade sempre, entregou o parecer técnico com
-            rapidez e com muitos detalhes."
+            Atendimento com equipe nota dez, treinada, qualificada em
+            atendimento e prestação de serviços com os seus clientes, excelente
+            opção de fornecedor para que você possa incluir na sua lista de
+            prestadores de serviços e pode indicar para os seus amigos e
+            familiares. 05 estelas!
           </p>
           <div class="swiper__slide-cliente">
-            <img src="/swiper/Dra Ana Clara Nunes.png" alt="" />
+            <img src="/swiper/cleber-coutinho.png" alt="" />
             <div>
-              <span>Dra. Ana Clara Nunes</span>
-              <span>Advogada</span>
+              <span>Cleber Coutinho</span>
+              <span>Google Review</span>
             </div>
           </div>
         </div>
       </div>
       <div class="swiper-slide">
         <div class="swiper-content">
-          <h4>Clientes</h4>
+          <div class="swiper-content__details">
+            <img src="/swiper/swiper-aspas.svg" alt="Aspas" />
+            <img src="/swiper/swiper-stars.svg" alt="5 estrelas" />
+          </div>
           <p>
-            “Excelente. Profissionais comprometidas, capacitadas e atenciosas.
-            Indico sem a menor dúvida."
+            Se você está a procura de Profissionais capacitados e atenciosos,
+            com toda certeza você encontra na Novamed! Muito sucesso a empressa,
+            Sr. Mariano pessoa excelentissima sempre disposto a ajudar e melhor
+            atender, parabens a toda equipe!
           </p>
           <div class="swiper__slide-cliente">
-            <img src="/swiper/Flavia Alo.png" alt="" />
+            <img src="/swiper/anne-gomes.png" alt="" />
             <div>
-              <span>Flávia Aló</span>
+              <span>Anne Gomes</span>
               <span>Google Review</span>
             </div>
           </div>
@@ -76,197 +97,100 @@ import "swiper/css";
 </section>
 
 <style lang="scss">
-  :root {
-    --swiper-pagination-color: var(--neutral-color-100);
-    --swiper-pagination-bullet-size: 15px;
-    --swiper-pagination-bullet-width: 15px;
-    --swiper-pagination-bullet-height: 15px;
-    --swiper-pagination-bullet-horizontal-gap: 5px;
-    --swiper-pagination-bullet-inactive-color: #ffffff;
-    --swiper-pagination-bullet-inactive-opacity: 0.4;
-  }
   .depoimentos {
-    margin-top: -2rem;
-    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 5rem 0;
   }
 
-  .swiper {
+  .swiper-container {
+    padding: 1.5rem;
     width: 100%;
+    max-width: 102rem;
   }
 
   .swiper-slide {
-    background-color: #fff;
-    border-radius: 2rem;
-    padding: 2.5rem;
-    font-family: var(--ff-space-grotesk);
+    border-radius: 1.5rem;
+    padding: 4rem 3.5rem;
     height: fit-content;
-    letter-spacing: 0.001em;
     cursor: grab;
+    box-shadow: rgba(100, 100, 111, 0.17) 0px 7px 24px 0px;
 
     .swiper-content {
       display: flex;
       flex-direction: column;
-      gap: 2.25rem;
+      gap: 4rem;
 
-      h4 {
-        font-size: 1.375rem;
-        padding: 0.7em 1.2em;
-        background-color: var(--primary-color-400);
-        width: fit-content;
-        font-weight: 300;
-        text-transform: uppercase;
+      &__details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       p {
-        font-size: clamp(1.5rem, 1.5vw, 3rem);
-        color: var(--neutral-color-900);
-        font-weight: 500;
-        line-height: 1.5;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.75;
+        color: var(--color-gray);
+        min-height: 5lh;
       }
 
       .swiper__slide-cliente {
         display: flex;
-        gap: 1.5rem;
-
-        img {
-          height: 50px;
-          width: 50px;
-        }
+        gap: 1rem;
+        align-items: center;
 
         div {
-          color: var(--neutral-color-700);
-          font-size: 1.25rem;
-
           display: flex;
           flex-direction: column;
           justify-content: center;
 
+          span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            line-height: 1.3;
+          }
+
           span:last-child {
-            font-weight: 300;
+            font-weight: 400;
+            font-size: 1.125rem;
+            color: var(--color-gray);
           }
         }
       }
     }
   }
 
-  @media only screen and (max-width: 1249px) {
-    .swiper-slide {
-      padding: 2.25rem;
-
-      .swiper-content {
-        gap: 1.5rem;
-
-        h4 {
-          font-size: 1.25rem;
-        }
-
-        .swiper__slide-cliente {
-          img {
-            height: 40px;
-            width: 40px;
-          }
-
-          div {
-            font-size: 1rem;
-          }
-        }
-      }
-    }
+  .swiper-pagination {
   }
 
-  @media only screen and (max-width: 900px) {
-    :root {
-      --swiper-pagination-bullet-size: 10px;
-      --swiper-pagination-bullet-width: 10px;
-      --swiper-pagination-bullet-height: 10px;
-      --swiper-pagination-bullet-horizontal-gap: 5px;
-    }
-
-    .swiper-slide {
-      padding: 1.75rem;
-
-      .swiper-content {
-        gap: 1.25rem;
-
-        h4 {
-          font-size: 1rem;
-        }
-      }
-    }
+  @media screen and (min-width: 900px) {
   }
 
-  @media only screen and (max-width: 600px) {
-    .swiper-slide {
-      padding: 1.5rem;
-
-      .swiper-content {
-        gap: 1.25rem;
-
-        h4 {
-          font-size: 1rem;
-        }
-
-        .swiper__slide-cliente {
-          img {
-            height: 30px;
-            width: 30px;
-          }
-
-          div {
-            font-size: 0.875rem;
-          }
-        }
-      }
-    }
+  :root {
+    --swiper-pagination-color: var(--blue-primary);
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-width: 10px;
+    --swiper-pagination-bullet-height: 10px;
+    --swiper-pagination-bullet-inactive-color: #e3e3e3;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
   }
 </style>
 
 <script>
   import Swiper from "swiper";
-
-  const not_active_slide_scale_value = 0.75;
-  const not_active_slide_opacity_value = 0.6;
+  import "swiper/swiper-bundle.css";
 
   const swiper = new Swiper(".swiper", {
-    direction: "horizontal",
     loop: true,
-    slidesPerView: 1.1,
-    effect: "creative",
-    autoplay: {
-      delay: 5000,
-    },
-    creativeEffect: {
-      limitProgress: 2, // slides after 2nd before/after active will have same state
-      prev: {
-        opacity: not_active_slide_opacity_value,
-        scale: not_active_slide_scale_value,
-        translate: ["-100%", 0, 0],
-      },
-      next: {
-        opacity: not_active_slide_opacity_value,
-        scale: not_active_slide_scale_value,
-        translate: ["100%", 0, 0],
-      },
-    },
-    spaceBetween: 0,
-    breakpoints: {
-      "600": {
-        slidesPerView: 1.3,
-        spaceBetween: 0,
-      },
-      "901": {
-        slidesPerView: 1.7,
-        spaceBetween: 50,
-      },
-      "1200": {
-        slidesPerView: 2.4,
-        spaceBetween: 100,
-      },
-    },
-    centeredSlides: true,
+    slidesPerView: 2,
+    spaceBetween: 50,
     pagination: {
       el: ".swiper-pagination",
-      clickable: true,
     },
   });
 </script>
