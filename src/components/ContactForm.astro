@@ -1,0 +1,170 @@
+---
+
+---
+
+<section>
+  <div class="contact">
+    <div class="contact-form">
+      <h6>Tem alguma dúvida?<br />Entre em contato</h6>
+      <form action="" method="POST">
+        <input type="text" name="Nome" placeholder="Nome" required />
+        <input type="email" name="Email" placeholder="Email" required />
+        <input
+          type="tel"
+          name="Telefone"
+          placeholder="Telefone"
+          pattern="[\d\s\(\)\-]{8,15}"
+          required
+        />
+        <input type="text" name="Mensagem" placeholder="Mensagem" required />
+        <select
+          name="Como prefere ser contactado?"
+          required
+          aria-label="Tipo de contato"
+        >
+          <option value="" disabled selected
+            >Como prefere ser contactado?</option
+          >
+          <option value="Whatsapp">Whatsapp</option>
+          <option value="Email">Email</option>
+          <option value="Ligacao">Ligação</option>
+        </select>
+        <input class="submit" type="submit" value="Enviar mensagem" />
+      </form>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    background-image: url("/contact-background.png");
+    background-size: cover;
+    background-position: center;
+
+    padding: 15rem 0 5rem;
+
+    .contact {
+      display: flex;
+      max-width: 102rem;
+      width: 100%;
+      margin: 0 auto;
+
+      &-form {
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.17) 0px 7px 24px 0px;
+        padding: 4.5rem 1.5rem;
+        border-radius: 2rem;
+        width: 100%;
+
+        h6 {
+          font-size: 1.5rem;
+          text-align: center;
+          font-weight: 700;
+          line-height: 1.5;
+          margin-bottom: 2.5rem;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+
+          input,
+          select {
+            border: 2px solid #d4d4d2;
+            color: var(--color-gray);
+            padding: 1rem 1.25rem;
+            width: 100%;
+            font-size: 0.875rem;
+            border-radius: 999px;
+          }
+
+          input:focus,
+          select:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+          }
+
+          input::placeholder,
+          select::placeholder {
+            color: var(--color-gray);
+            font-family: "Poppins", sans-serif;
+          }
+
+          input:valid,
+          select:valid {
+            border-color: #88fbd2;
+          }
+
+          input:invalid:not(:placeholder-shown) {
+            border-color: #e63838;
+          }
+        }
+      }
+    }
+  }
+
+  // form {
+
+  //   input:not(:placeholder-shown) {
+  //     border-color: var(--secondary-color-400);
+  //   }
+
+  //   input::placeholder {
+  //     color: var(--neutral-color-300);
+  //   }
+
+  //   input:first-child {
+  //     background: url(/icons/icon_user-solid.svg) no-repeat 95% center;
+  //     background-size: 15px;
+  //   }
+
+  //   input:nth-child(2) {
+  //     background: url(/icons/icon_envelope-solid.svg) no-repeat 95% center;
+  //     background-size: 15px;
+  //   }
+
+  //   input:nth-child(3) {
+  //     background: url(/icons/icon_phone-solid.svg) no-repeat 95% center;
+  //     background-size: 15px;
+  //   }
+
+  //   select {
+  //     background: url(/icons/icon_chevron-down-solid.svg) no-repeat 95% center;
+  //     background-size: 15px;
+  //     appearance: none;
+  //   }
+
+  //   .submit {
+  //     color: #fff;
+  //     border: none;
+  //     text-transform: uppercase;
+  //     font-size: 1rem;
+  //     padding: 0.75rem 1.25rem;
+  //     text-align: left;
+  //     font-family: var(--ff-space-grotesk);
+  //     font-weight: 300;
+  //     letter-spacing: 0.05em;
+  //     margin-top: 1.5rem;
+  //     cursor: pointer;
+
+  //     background: url("/icons/icon_arrow-right.svg") var(--primary-color-400)
+  //       no-repeat 95% center;
+  //     background-size: 15px;
+  //   }
+  // }
+
+  @media screen and (min-width: 900px) {
+    section {
+      padding: 6rem 1rem 4.5rem;
+
+      .contact {
+        &-form {
+          padding: 4.5rem 7rem;
+          max-width: calc(325px + 14rem);
+        }
+      }
+    }
+  }
+</style>
