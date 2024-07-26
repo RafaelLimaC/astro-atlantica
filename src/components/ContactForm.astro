@@ -13,7 +13,7 @@
           type="tel"
           name="Telefone"
           placeholder="Telefone"
-          pattern="[\d\s\(\)\-]{8,15}"
+          pattern="[0-9\s\(\)\-]{8,15}"
           required
         />
         <input type="text" name="Mensagem" placeholder="Mensagem" required />
@@ -54,7 +54,6 @@
         background-color: white;
         box-shadow: rgba(100, 100, 111, 0.17) 0px 7px 24px 0px;
         padding: 4.5rem 1.5rem;
-        border-radius: 2rem;
         width: 100%;
 
         h6 {
@@ -163,6 +162,7 @@
         &-form {
           padding: 4.5rem 7rem;
           max-width: calc(325px + 14rem);
+          border-radius: 2rem;
         }
       }
     }
