@@ -16,7 +16,7 @@
         />
         <input type="email" name="Email" placeholder="Email" required />
         <input
-          type="text"
+          type="tel"
           name="Telefone"
           placeholder="Telefone"
           minlength="14"
@@ -24,7 +24,13 @@
           id="telefone"
           required
         />
-        <input type="text" name="Mensagem" placeholder="Mensagem" required />
+        <input
+          type="text"
+          name="Mensagem"
+          placeholder="Mensagem"
+          minlength="3"
+          required
+        />
         <select
           name="Como prefere ser contactado?"
           required
@@ -40,15 +46,36 @@
         <input class="submit" type="submit" value="Enviar mensagem" />
       </form>
     </div>
-    <div></div>
+    <div class="contact-info">
+      <div class="contact-info__wrapper">
+        <img src="/icons/big-phone.svg" alt="" />
+        <div class="contact-info__text">
+          <p>Telefone</p>
+          <span>+55 (22) 3081-2840</span>
+        </div>
+      </div>
+      <div class="contact-info__wrapper">
+        <img src="/icons/big-envelope.svg" alt="" />
+        <div class="contact-info__text">
+          <p>Email</p>
+          <span>contato@distribuidoraatlantico.com</span>
+        </div>
+      </div>
+      <div class="contact-info__wrapper">
+        <img src="/icons/big-location.svg" alt="" />
+        <div class="contact-info__text">
+          <p>Endereço</p>
+          <span>R. Sebastião Lopes da Silva, 152 - Riviera - 27937-560</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   section {
     background-image: url("/contact-background.png");
-    background-size: cover;
-    background-position: center;
+    background-position: 83% 700px;
 
     padding: 15rem 0 5rem;
 
@@ -57,11 +84,12 @@
       max-width: 102rem;
       width: 100%;
       margin: 0 auto;
+      gap: 5rem;
 
       &-form {
         background-color: white;
         box-shadow: rgba(100, 100, 111, 0.17) 0px 7px 24px 0px;
-        padding: 4.5rem 1.5rem;
+        padding: 4.5rem 1.5rem 6rem;
         width: 100%;
 
         h6 {
@@ -70,6 +98,7 @@
           font-weight: 700;
           line-height: 1.5;
           margin-bottom: 2.5rem;
+          color: var(--color-dark);
         }
 
         form {
@@ -106,27 +135,32 @@
 
           input:invalid:not(:placeholder-shown) {
             border-color: #e63838;
-            background: url("/icons/contact-error.svg") no-repeat 95% center;
+            background: url("/icons/contact-error.svg") no-repeat right 20px
+              center;
             background-size: 15px;
           }
 
           input:first-child {
-            background: url("/icons/contact-user.svg") no-repeat 95% center;
+            background: url("/icons/contact-user.svg") no-repeat right 20px
+              center;
             background-size: 15px;
           }
 
           input:nth-child(2) {
-            background: url("/icons/contact-envelope.svg") no-repeat 95% center;
+            background: url("/icons/contact-envelope.svg") no-repeat right 20px
+              center;
             background-size: 15px;
           }
 
           input:nth-child(3) {
-            background: url("/icons/contact-phone.svg") no-repeat 95% center;
+            background: url("/icons/contact-phone.svg") no-repeat right 20px
+              center;
             background-size: 15px;
           }
 
           select {
-            background: url("/icons/chevron-down.svg") no-repeat 95% center;
+            background: url("/icons/chevron-down.svg") no-repeat right 20px
+              center;
             background-size: 15px;
             appearance: none;
           }
@@ -137,9 +171,42 @@
             color: white;
             cursor: pointer;
             transition: background-color 0.2s ease;
+            margin-top: 20px;
 
             &:hover {
               background-color: var(--blue-secondary);
+            }
+          }
+        }
+      }
+
+      &-info {
+        display: none;
+
+        .contact-info__wrapper {
+          background-color: white;
+          padding: 0.875rem;
+          padding-right: 2rem;
+          border-radius: 1rem;
+
+          display: flex;
+          gap: 2rem;
+          width: fit-content;
+
+          .contact-info__text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            p {
+              font-size: 1.125rem;
+              font-weight: bold;
+              color: var(--color-dark);
+            }
+
+            span {
+              font-size: 1.125rem;
+              color: var(--color-gray);
             }
           }
         }
@@ -150,12 +217,30 @@
   @media screen and (min-width: 900px) {
     section {
       padding: 6rem 1rem 4.5rem;
+      background-size: cover;
+      background-position: center;
 
       .contact {
         &-form {
           padding: 4.5rem 7rem;
           max-width: calc(325px + 14rem);
           border-radius: 2rem;
+        }
+
+        &-info {
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    section {
+      .contact {
+        &-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          gap: 1.5rem;
         }
       }
     }
