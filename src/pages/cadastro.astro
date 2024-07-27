@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import FormProvider from "../layouts/form-provider.jsx";
+import FormProvider from "../layouts/form-provider.tsx";
 ---
 
 <Layout title="Atlântico - Cadastro para clientes">
@@ -10,7 +10,7 @@ import FormProvider from "../layouts/form-provider.jsx";
     <img id="headerLogo" class="header-logo" src="/logo-black.svg" alt="Logo" />
     <h1 class="header__register">Cadastro para clientes</h1>
   
-    <FormProvider />
+    <FormProvider client:only />
   </main>
 </Layout>
 
@@ -22,7 +22,6 @@ import FormProvider from "../layouts/form-provider.jsx";
     
     max-width: 102rem; //1220px
     width: 100%;
-
 
     padding: 1rem;
 
