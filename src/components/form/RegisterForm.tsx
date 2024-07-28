@@ -47,7 +47,7 @@ export default function RegisterForm() {
             id="empresa-ramoDeAtividade"
             labelFor="empresa-ramoDeAtividade"
             required
-            {...register("empresa-ramoDeAtividade")}
+            {...register("empresa-ramoDeAtividade", { required: true })}
           />
         </div>
 
@@ -59,7 +59,8 @@ export default function RegisterForm() {
             id="empresa-CNPJ"
             name="empresa-CNPJ"
             className="col-auto md:col-span-3"
-            {...register("empresa-CNPJ")}
+            {...register("empresa-CNPJ", { required: true })}
+            required
           />
 
           <Input
@@ -68,7 +69,8 @@ export default function RegisterForm() {
             labelFor="empresa-endereco"
             id="empresa-endereco"
             name="empresa-endereco"
-            {...register("empresa-endereco")}
+            {...register("empresa-endereco", { required: true })}
+            required
           />
         </div>
 
@@ -114,7 +116,8 @@ export default function RegisterForm() {
             labelFor="empresa-celular"
             id="empresa-celular"
             name="empresa-celular"
-            {...register("empresa-celular")}
+            {...register("empresa-celular", { required: true })}
+            required
           />
 
           <PatternInput
@@ -123,7 +126,8 @@ export default function RegisterForm() {
             labelFor="empresa-telefone"
             id="empresa-telefone"
             name="empresa-telefone"
-            {...register("empresa-telefone")}
+            {...register("empresa-telefone", { required: true })}
+            required
           />
 
           <PatternInput
@@ -132,7 +136,8 @@ export default function RegisterForm() {
             labelFor="empresa-whatsapp"
             id="empresa-whatsapp"
             name="empresa-whatsapp"
-            {...register("empresa-whatsapp")}
+            {...register("empresa-whatsapp", { required: true })}
+            required
           />
 
           <PatternInput
@@ -156,7 +161,8 @@ export default function RegisterForm() {
             labelFor="comprador-nome"
             id="comprador-nome"
             name="comprador-nome"
-            {...register("comprador-nome")}
+            {...register("comprador-nome", { required: true })}
+            required
           />
 
           <PatternInput
@@ -166,7 +172,8 @@ export default function RegisterForm() {
             labelFor="comprador-celular"
             id="comprador-celular"
             name="comprador-celular"
-            {...register("comprador-celular")}
+            {...register("comprador-celular", { required: true })}
+            required
           />
 
           <Input
@@ -176,7 +183,8 @@ export default function RegisterForm() {
             labelFor="comprador-email"
             id="comprador-email"
             name="comprador-email"
-            {...register("comprador-email")}
+            {...register("comprador-email", { required: true })}
+            required
           />
         </div>
 
@@ -187,7 +195,8 @@ export default function RegisterForm() {
             labelFor="comprador-responsavelNome"
             id="comprador-responsavelNome"
             name="comprador-responsavelNome"
-            {...register("comprador-responsavelNome")}
+            {...register("comprador-responsavelNome", { required: true })}
+            required
           />
 
           <PatternInput
@@ -197,7 +206,8 @@ export default function RegisterForm() {
             labelFor="comprador-responsavelCelular"
             id="comprador-responsavelCelular"
             name="comprador-responsavelCelular"
-            {...register("comprador-responsavelCelular")}
+            {...register("comprador-responsavelCelular", { required: true })}
+            required
           />
 
           <Input
@@ -207,7 +217,8 @@ export default function RegisterForm() {
             labelFor="comprador-responsavelEmail"
             id="comprador-responsavelEmail"
             name="comprador-responsavelEmail"
-            {...register("comprador-responsavelEmail")}
+            {...register("comprador-responsavelEmail", { required: true })}
+            required
           />
         </div>
 
@@ -218,7 +229,8 @@ export default function RegisterForm() {
             labelFor="comprador-emailFinanceiro"
             id="comprador-emailFinanceiro"
             name="comprador-emailFinanceiro"
-            {...register("comprador-emailFinanceiro")}
+            {...register("comprador-emailFinanceiro", { required: true })}
+            required
           />
 
           <Input
@@ -227,7 +239,8 @@ export default function RegisterForm() {
             labelFor="comprador-emailXML"
             id="comprador-emailXML"
             name="comprador-emailXML"
-            {...register("comprador-emailXML")}
+            {...register("comprador-emailXML", { required: true })}
+            required
           />
         </div>
 
@@ -238,18 +251,23 @@ export default function RegisterForm() {
             labelFor="comprador-periodoFechamento"
             id="comprador-periodoFechamento"
             name="comprador-periodoFechamento"
-            {...register("comprador-periodoFechamento")}
+            {...register("comprador-periodoFechamento", { required: true })}
+            required
           />
 
           <div className="col-auto flex items-center gap-1 text-gray8b md:col-span-3 md:gap-[2.375rem]">
-            <p className="text-sm">Metodo de Pagamento:</p>
+            <p className="text-sm">
+              Metodo de Pagamento<span className="text-sm text-red-500">*</span>
+              :
+            </p>
             {/* [TODO] */}
             <div className="flex items-center gap-[0.875rem]">
               <input
                 type="radio"
                 name="metodoDePagamento"
                 className="scale-150 accent-lightBlue"
-                {...register("comprador-metodoDePagamento")}
+                {...register("comprador-metodoDePagamento", { required: true })}
+                required
               />
               <label>Boleto</label>
             </div>
@@ -259,7 +277,8 @@ export default function RegisterForm() {
                 type="radio"
                 name="metodoDePagamento"
                 className="scale-150 accent-lightBlue"
-                {...register("comprador-metodoDePagamento")}
+                {...register("comprador-metodoDePagamento", { required: true })}
+                required
               />
               <label>Transferência</label>
             </div>
@@ -269,7 +288,8 @@ export default function RegisterForm() {
                 type="radio"
                 name="metodoDePagamento"
                 className="scale-150 accent-lightBlue"
-                {...register("comprador-metodoDePagamento")}
+                {...register("comprador-metodoDePagamento", { required: true })}
+                required
               />
               <label>PIX</label>
             </div>
@@ -282,7 +302,94 @@ export default function RegisterForm() {
             id="comprador-prazo"
             labelFor="comprador-prazo"
             name="comprador-prazo"
-            {...register("comprador-prazo")}
+            {...register("comprador-prazo", { required: true })}
+            required
+          />
+        </div>
+
+        <h3 className="mb-[1.313rem] mt-[2.5rem] text-2xl font-bold uppercase">
+          Dados de Recebimento
+        </h3>
+
+        <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem] md:grid-cols-6">
+          <Input
+            className="col-auto md:col-span-4"
+            label="Nome do Responsável"
+            labelFor="recebimento-nomeResponsavel"
+            id="recebimento-nomeResponsavel"
+            name="recebimento-nomeResponsavel"
+            {...register("recebimento-nomeReponsavel", { required: true })}
+            required
+          />
+
+          <PatternInput
+            format="(##) #####-####"
+            className="col-auto md:col-span-2"
+            label="Telefone"
+            labelFor="recebimento-telefoneResponsavel"
+            id="recebimento-telefoneResponsavel"
+            name="recebimento-telefoneResponsavel"
+            {...register("recebimento-telefoneResponsavel", { required: true })}
+            required
+          />
+        </div>
+
+        <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem] md:grid-cols-2">
+          <Input
+            label="Dias de Recebimento"
+            labelFor="recebimento-dias"
+            id="recebimento-dias"
+            name="recebiment-dias"
+            {...register("recebimento-dias")}
+          />
+          <Input
+            label="Horários de Recebimento"
+            labelFor="recebimento-horarios"
+            id="recebimento-horarios"
+            name="recebimento-horarios"
+            {...register("recebimento-horarios")}
+          />
+        </div>
+
+        <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem]">
+          <Input
+            label="Endereço de Entrega"
+            labelFor="recebimento-endereco"
+            id="recebimento-endereco"
+            name="recebimento-endereco"
+            {...register("recebimento-endereco", { required: true })}
+            required
+          />
+        </div>
+
+        <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem] md:grid-cols-4">
+          <Input
+            label="Bairro"
+            labelFor="recebimento-bairro"
+            id="recebimento-bairro"
+            {...register("recebimento-bairro")}
+          />
+
+          <Input
+            label="Estado"
+            labelFor="recebimento-estado"
+            id="recebimento-estado"
+            {...register("recebimento-estado")}
+          />
+
+          <Input
+            label="Cidade"
+            labelFor="recebimento-cidade"
+            id="recebimento-cidade"
+            {...register("recebimento-cidade")}
+          />
+
+          <Input
+            label="CEP"
+            labelFor="recebimento-cep"
+            id="recebimento-cep"
+            name="recebimento-cep"
+            {...register("recebimento-cep")}
           />
         </div>
 
@@ -363,6 +470,7 @@ export default function RegisterForm() {
             name="referencias-empresa2"
             {...register("referencias-empresa2")}
           />
+
           <Input
             label="Contato"
             className="col-auto md:col-span-2"
@@ -429,16 +537,20 @@ export default function RegisterForm() {
             id="contatos-responsavelComercial"
             labelFor="contatos-responsavelComercial"
             name="contatos-responsavelComercial"
-            {...register("contatos-responsavelComercial")}
+            {...register("contatos-responsavelComercial", { required: true })}
+            required
           />
+
           <Input
             label="Celular"
             className="col-auto md:col-span-2"
             id="contatos-celularComercial"
             labelFor="contatos-celularComercial"
             name="contatos-celularComercial"
-            {...register("contatos-celularComercial")}
+            {...register("contatos-celularComercial", { required: true })}
+            required
           />
+
           <Input
             label="E-mail"
             type="email"
@@ -446,7 +558,8 @@ export default function RegisterForm() {
             id="contatos-emailComercial"
             labelFor="contatos-emailComercial"
             name="contatos-emailComercial"
-            {...register("contatos-emailComercial")}
+            {...register("contatos-emailComercial", { required: true })}
+            required
           />
         </div>
 
@@ -457,7 +570,8 @@ export default function RegisterForm() {
             id="contatos-responsavelFinanceiro"
             labelFor="contatos-responsavelFinanceiro"
             name="contatos-responsavelFinanceiro"
-            {...register("contatos-responsavelFinanceiro")}
+            {...register("contatos-responsavelFinanceiro", { required: true })}
+            required
           />
           <Input
             label="Celular"
@@ -465,7 +579,8 @@ export default function RegisterForm() {
             id="contatos-celularFinanceiro"
             labelFor="contatos-celularFinanceiro"
             name="contatos-celularFinanceiro"
-            {...register("contatos-celularFinanceiro")}
+            {...register("contatos-celularFinanceiro", { required: true })}
+            required
           />
           <Input
             label="E-mail"
@@ -474,7 +589,8 @@ export default function RegisterForm() {
             id="contatos-emailFinanceiro"
             labelFor="contatos-emailFinanceiro"
             name="contatos-emailFinanceiro"
-            {...register("contatos-emailFinanceiro")}
+            {...register("contatos-emailFinanceiro", { required: true })}
+            required
           />
         </div>
 
@@ -485,7 +601,8 @@ export default function RegisterForm() {
             id="contatos-responsavelTecnico"
             labelFor="contatos-responsavelTecnico"
             name="contatos-responsavelTecnico"
-            {...register("contatos-responsavelTecnico")}
+            {...register("contatos-responsavelTecnico", { required: true })}
+            required
           />
 
           <Input
@@ -494,7 +611,8 @@ export default function RegisterForm() {
             id="contatos-celularTecnico"
             labelFor="contatos-celularTecnico"
             name="contatos-celularTecnico"
-            {...register("contatos-celularTecnico")}
+            {...register("contatos-celularTecnico", { required: true })}
+            required
           />
 
           <Input
@@ -504,7 +622,8 @@ export default function RegisterForm() {
             id="contatos-emailTecnico"
             labelFor="contatos-emailTecnico"
             name="contatos-emailTecnico"
-            {...register("contatos-emailTecnico")}
+            {...register("contatos-emailTecnico", { required: true })}
+            required
           />
         </div>
 
