@@ -1,13 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useForm as useFormspree } from "@formspree/react";
 import { Input } from "../input/Input";
+import { PatternInput } from "../input/PatternInput";
+import { NumericInput } from "../input/NumericInput";
+import { toast } from "react-toastify";
 
 export default function RegisterForm() {
-  const [serverState, sendToFormspree] = useFormspree("xldrdvrz");
-  const { register, formState, handleSubmit } = useForm();
+  const [serverState, sendToFormspree] = useFormspree(
+    import.meta.env.PUBLIC_FORMSPREE_ID!,
+  );
+  const { register, handleSubmit } = useForm();
 
   if (serverState.succeeded) {
-    console.log("fodase");
+    toast("Wow so easy !");
   }
 
   return (
@@ -23,33 +28,40 @@ export default function RegisterForm() {
             id="razaoSocial"
             name="razaoSocial"
             labelFor="razaoSocial"
-            {...register("razaoSocial", { required: "Obrigatorios" })}
+            required
+            {...register("razaoSocial", { required: true })}
           />
+
           <Input
             label="Nome Fantasia"
             labelFor="empresa-nomeFantasia"
             id="empresa-nomeFantasia"
             name="empresa-nomeFantasia"
-            {...register("empresa-nomeFantasia", { required: "Obrigatorios" })}
+            required
+            {...register("empresa-nomeFantasia", { required: true })}
           />
+
           <Input
             label="Ramo de atividade"
             name="empresa-ramoDeAtividade"
             id="empresa-ramoDeAtividade"
             labelFor="empresa-ramoDeAtividade"
+            required
             {...register("empresa-ramoDeAtividade")}
           />
         </div>
 
         <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem] md:grid-cols-9">
-          <Input
-            label="empresa-CNPJ"
+          <NumericInput
+            maxLength={14}
+            label="CNPJ da Empresa"
             labelFor="empresa-CNPJ"
             id="empresa-CNPJ"
             name="empresa-CNPJ"
             className="col-auto md:col-span-3"
             {...register("empresa-CNPJ")}
           />
+
           <Input
             label="Endereço completo"
             className="col-auto md:col-span-6"
@@ -68,6 +80,7 @@ export default function RegisterForm() {
             name="empresa-bairro"
             {...register("empresa-bairro")}
           />
+
           <Input
             label="Estado"
             labelFor="empresa-estado"
@@ -75,6 +88,7 @@ export default function RegisterForm() {
             name="empresa-estado"
             {...register("empresa-estado")}
           />
+
           <Input
             label="Cidade"
             labelFor="empresa-cidade"
@@ -82,7 +96,9 @@ export default function RegisterForm() {
             name="empresa-cidade"
             {...register("empresa-cidade")}
           />
-          <Input
+
+          <PatternInput
+            format="#####-###"
             label="CEP"
             labelFor="empresa-cep"
             id="empresa-cep"
@@ -92,7 +108,8 @@ export default function RegisterForm() {
         </div>
 
         <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem] md:grid-cols-4">
-          <Input
+          <PatternInput
+            format="(##) #####-####"
             label="Celular"
             labelFor="empresa-celular"
             id="empresa-celular"
@@ -100,7 +117,8 @@ export default function RegisterForm() {
             {...register("empresa-celular")}
           />
 
-          <Input
+          <PatternInput
+            format="(##) #####-####"
             label="Telefone"
             labelFor="empresa-telefone"
             id="empresa-telefone"
@@ -108,7 +126,8 @@ export default function RegisterForm() {
             {...register("empresa-telefone")}
           />
 
-          <Input
+          <PatternInput
+            format="(##) #####-####"
             label="WhatsApp"
             labelFor="empresa-whatsapp"
             id="empresa-whatsapp"
@@ -116,7 +135,8 @@ export default function RegisterForm() {
             {...register("empresa-whatsapp")}
           />
 
-          <Input
+          <PatternInput
+            format="(##) #####-####"
             label="Outro"
             labelFor="empresa-outro"
             id="empresa-outro"
@@ -139,7 +159,8 @@ export default function RegisterForm() {
             {...register("comprador-nome")}
           />
 
-          <Input
+          <PatternInput
+            format="(##) #####-####"
             label="Celular"
             className="col-auto md:col-span-2"
             labelFor="comprador-celular"
@@ -150,6 +171,7 @@ export default function RegisterForm() {
 
           <Input
             label="E-mail compras"
+            type="email"
             className="col-auto md:col-span-3"
             labelFor="comprador-email"
             id="comprador-email"
@@ -168,7 +190,8 @@ export default function RegisterForm() {
             {...register("comprador-responsavelNome")}
           />
 
-          <Input
+          <PatternInput
+            format="(##) #####-####"
             label="Celular"
             className="col-auto md:col-span-2"
             labelFor="comprador-responsavelCelular"
@@ -179,6 +202,7 @@ export default function RegisterForm() {
 
           <Input
             label="E-mail compras"
+            type="email"
             className="col-auto md:col-span-3"
             labelFor="comprador-responsavelEmail"
             id="comprador-responsavelEmail"
@@ -190,6 +214,7 @@ export default function RegisterForm() {
         <div className="mt-[1.25rem] grid grid-cols-1 gap-[0.625rem] md:grid-cols-2">
           <Input
             label="E-mail Financeiro"
+            type="email"
             labelFor="comprador-emailFinanceiro"
             id="comprador-emailFinanceiro"
             name="comprador-emailFinanceiro"
@@ -198,6 +223,7 @@ export default function RegisterForm() {
 
           <Input
             label="E-mail envio XML/NF"
+            type="email"
             labelFor="comprador-emailXML"
             id="comprador-emailXML"
             name="comprador-emailXML"
@@ -223,6 +249,7 @@ export default function RegisterForm() {
                 type="radio"
                 name="metodoDePagamento"
                 className="scale-150 accent-lightBlue"
+                {...register("comprador-metodoDePagamento")}
               />
               <label>Boleto</label>
             </div>
@@ -232,6 +259,7 @@ export default function RegisterForm() {
                 type="radio"
                 name="metodoDePagamento"
                 className="scale-150 accent-lightBlue"
+                {...register("comprador-metodoDePagamento")}
               />
               <label>Transferência</label>
             </div>
@@ -241,6 +269,7 @@ export default function RegisterForm() {
                 type="radio"
                 name="metodoDePagamento"
                 className="scale-150 accent-lightBlue"
+                {...register("comprador-metodoDePagamento")}
               />
               <label>PIX</label>
             </div>
@@ -298,6 +327,7 @@ export default function RegisterForm() {
             name="referencias-bairro1"
             {...register("referencias-bairro1")}
           />
+
           <Input
             label="Estado"
             id="referencias-estado1"
@@ -305,6 +335,7 @@ export default function RegisterForm() {
             name="referencias-estado1"
             {...register("referencias-estado1")}
           />
+
           <Input
             label="Cidade"
             id="referencias-cidade1"
@@ -312,7 +343,9 @@ export default function RegisterForm() {
             name="referencias-cidade1"
             {...register("referencias-cidade1")}
           />
-          <Input
+
+          <PatternInput
+            format="#####-###"
             label="CEP"
             id="referencias-cep1"
             labelFor="referencias-cep1"
@@ -358,6 +391,7 @@ export default function RegisterForm() {
             name="referencias-bairro2"
             {...register("referencias-bairro2")}
           />
+
           <Input
             label="Estado"
             id="referencias-estado2"
@@ -365,6 +399,7 @@ export default function RegisterForm() {
             name="referencias-estado2"
             {...register("referencias-estado2")}
           />
+
           <Input
             label="Cidade"
             id="referencias-cidade2"
@@ -372,8 +407,10 @@ export default function RegisterForm() {
             name="referencias-cidade2"
             {...register("referencias-cidade2")}
           />
-          <Input
+
+          <PatternInput
             label="CEP"
+            format="#####-###"
             id="referencias-cep2"
             labelFor="referencias-cep2"
             name="referencias-cep2"
@@ -404,6 +441,7 @@ export default function RegisterForm() {
           />
           <Input
             label="E-mail"
+            type="email"
             className="col-auto md:col-span-3"
             id="contatos-emailComercial"
             labelFor="contatos-emailComercial"
@@ -431,6 +469,7 @@ export default function RegisterForm() {
           />
           <Input
             label="E-mail"
+            type="email"
             className="col-auto md:col-span-3"
             id="contatos-emailFinanceiro"
             labelFor="contatos-emailFinanceiro"
@@ -448,6 +487,7 @@ export default function RegisterForm() {
             name="contatos-responsavelTecnico"
             {...register("contatos-responsavelTecnico")}
           />
+
           <Input
             label="Celular"
             className="col-auto md:col-span-2"
@@ -456,8 +496,10 @@ export default function RegisterForm() {
             name="contatos-celularTecnico"
             {...register("contatos-celularTecnico")}
           />
+
           <Input
             label="E-mail"
+            type="email"
             className="col-auto md:col-span-3"
             id="contatos-emailTecnico"
             labelFor="contatos-emailTecnico"
@@ -470,7 +512,7 @@ export default function RegisterForm() {
           <input
             type="checkbox"
             className="scale-150 accent-lightBlue"
-            {...register("check")}
+            required
           />
 
           <p>
@@ -491,7 +533,6 @@ export default function RegisterForm() {
           <button
             className="w-full max-w-[20rem] rounded-[1.688rem] bg-lightBlue py-[0.875rem] text-base text-white"
             type="submit"
-            // disabled={serverState.submitting}
           >
             Enviar
           </button>
@@ -500,84 +541,3 @@ export default function RegisterForm() {
     </div>
   );
 }
-
-// import { useSubmit } from '@formspree/react';
-// import { useForm } from 'react-hook-form';
-
-// type Inputs = {
-//   email: string;
-//   message: string;
-//   name: string;
-// };
-
-// export default function RegisterForm() {
-//   const {
-//     formState: { errors, isSubmitSuccessful, isSubmitting },
-//     handleSubmit,
-//     register,
-//     setError,
-//   } = useForm<Inputs>();
-
-//   const submit = useSubmit<Inputs>(
-//     'xldrdvrz',
-//     {
-//       onError(errs) {
-//         const formErrs = errs.getFormErrors();
-//         for (const { code, message } of formErrs) {
-//           setError(`root.${code}`, {
-//             type: code,
-//             message,
-//           });
-//         }
-
-//         const fieldErrs = errs.getAllFieldErrors();
-//         for (const [field, errs] of fieldErrs) {
-//           setError(field, {
-//             message: errs.map((e) => e.message).join(', '),
-//           });
-//         }
-//       },
-//     }
-//   );
-
-//   return (
-//     <div>
-//       {isSubmitSuccessful ? (
-//         <h2>Your message has been sent successfully!</h2>
-//       ) : (
-//         <form onSubmit={handleSubmit(submit)}>
-//           <div className="block">
-//             <label htmlFor="email">Email</label>
-//             <input {...register('email')} id="email" type="email" />
-//             {errors.email && <p className="error">{errors.email.message}</p>}
-//           </div>
-//           <div className="block">
-//             <label htmlFor="name">Name</label>
-//             <input {...register('name')} id="name" />
-//             {errors.name && <p className="error">{errors.name.message}</p>}
-//           </div>
-//           <div className="block">
-//             <label htmlFor="message">Message</label>
-//             <textarea {...register('message')} id="message" rows={10} />
-//           </div>
-//           {errors.root && (
-//             <div className="block">
-//               <ul className="error">
-//                 {Object.values(errors.root).map((err) => {
-//                   if (typeof err !== 'object') {
-//                     return <li key={err}>{err}</li>;
-//                   }
-//                   const { type, message } = err;
-//                   return <li key={type}>{message}</li>;
-//                 })}
-//               </ul>
-//             </div>
-//           )}
-//           <button type="submit" disabled={isSubmitting}>
-//             {isSubmitting ? 'Submitting...' : 'Submit'}
-//           </button>
-//         </form>
-//       )}
-//     </div>
-//   );
-// }
