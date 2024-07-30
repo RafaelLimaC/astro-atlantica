@@ -96,11 +96,30 @@ import Button from "./Button.astro";
       display: flex;
       gap: 3vw;
 
-      li a {
-        color: var(--color-dark);
-        text-decoration: none;
-        font-size: 1.125rem;
-        font-weight: 500;
+      li {
+        &:hover {
+          a {
+            color: var(--blue-primary);
+            position: relative;
+
+            &::before {
+              content: url("/icons/drop.svg");
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -2.5rem;
+              opacity: 0;
+              animation: drop-animation 0.3s forwards;
+            }
+          }
+        }
+
+        a {
+          color: var(--color-dark);
+          text-decoration: none;
+          font-size: 1.125rem;
+          font-weight: 500;
+        }
       }
 
       .header-nav__item {
@@ -183,6 +202,17 @@ import Button from "./Button.astro";
       gap: 1rem;
       flex-direction: column;
       align-items: center;
+    }
+  }
+
+  @keyframes drop-animation {
+    from {
+      top: -2.5rem;
+      opacity: 0;
+    }
+    to {
+      top: -1.25rem;
+      opacity: 1;
     }
   }
 
