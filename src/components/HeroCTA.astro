@@ -2,48 +2,164 @@
 import Button from "./Button.astro";
 ---
 
-<section class="hero-cta">
-  <div class="hero-cta__wrapper">
-    <div>
+<section id="home">
+  <div class="hero-cta">
+    <div class="hero-cta__text">
       <h1>Distribuição de material hospitalar e medicamentos</h1>
       <p>
         Promovemos a saúde com soluções seguras e eficazes, focando no bem-estar
         de todos. Garantimos custo-benefício, rentabilidade, ética,
         responsabilidade social e ambiental.
       </p>
-      <div>
-        <Button class="primary">
-          <img
-            class="header-cta__img"
-            src="/icons/envelope-white.svg"
-            alt="Entre em contato"
-          />
+      <div class="hero-cta__text__buttons">
+        <Button class="primary" href="#contato" src="/icons/envelope.svg">
           Entre em contato
         </Button>
-        <Button class="white">
-          <img
-            class="nav-cta__img"
-            src="/icons/list-blue.svg"
-            alt="Cadastre-se"
-          />
+        <Button class="white" href="/cadastro" src="/icons/list.svg">
           Cadastre-se
         </Button>
-        <span
-          >Serviços entregues com o método <strong>just in time</strong></span
-        >
       </div>
+      <span>
+        <img src="/just-in-time.svg" alt="" />
+        <p>
+          Serviços entregues com o método <strong>just in time</strong>
+        </p>
+      </span>
     </div>
-    <img src="/heroimg.png" alt="Distribuição de material hospitalar" />
+    <img
+      class="hero-cta__image"
+      src="/heroimg.webp"
+      alt="Distribuição de material hospitalar"
+    />
   </div>
 </section>
 
 <style lang="scss">
   section {
-    width: 100%;
-    max-width: 102rem;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
   }
 
   .hero-cta {
+    max-width: 102rem;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    margin: 1.5rem 0 0 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__text {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      max-width: 700px;
+      font-weight: 600;
+
+      h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        color: var(--color-dark);
+        line-height: 1.35;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      p {
+        color: var(--color-gray);
+        line-height: 1.75rem;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      &__buttons {
+        display: flex;
+        gap: 1.125rem;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          height: 16px;
+          margin-right: 0.75rem;
+        }
+      }
+
+      span {
+        display: none;
+        align-items: center;
+        gap: 1rem;
+
+        p {
+          color: var(--color-dark);
+          font-weight: 500;
+          margin-bottom: 0;
+
+          strong {
+            color: var(--blue-primary);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &__image {
+      display: block;
+      max-height: 450px;
+      margin-left: -4rem;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    section {
+      min-height: calc(100vh - 92px);
+    }
+
+    .hero-cta {
+      margin: 10rem 0 8rem 0;
+      align-items: start;
+
+      &__text {
+        h1 {
+          text-align: left;
+          font-size: 4.125rem;
+          font-weight: 600;
+        }
+
+        p {
+          text-align: left;
+          font-size: 1.125rem;
+        }
+
+        &__buttons {
+          flex-direction: row;
+          gap: 0.5rem;
+          margin-bottom: 5rem;
+        }
+
+        span {
+          display: flex;
+        }
+      }
+
+      &__image {
+        position: absolute;
+        left: max(500px, 40%);
+        top: -22%;
+        max-height: unset;
+        margin-left: 0;
+      }
+    }
   }
 </style>

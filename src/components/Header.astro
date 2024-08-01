@@ -12,26 +12,16 @@ import Button from "./Button.astro";
     />
     <nav class="header-nav" id="navMenu">
       <ul class="header-nav__ul">
-        <li><a href="/#">Sobre</a></li>
-        <li><a href="/#">História</a></li>
-        <li><a href="/#">Equipe</a></li>
-        <li><a href="/#">Depoimentos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#timeline">História</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
       </ul>
       <div class="nav-cta">
-        <Button class="primary">
-          <img
-            class="nav-cta__img"
-            src="/icons/envelope-white.svg"
-            alt="Entre em contato"
-          />
+        <Button class="primary" href="#contato" src="/icons/envelope.svg">
           Entre em contato
         </Button>
-        <Button class="white">
-          <img
-            class="nav-cta__img"
-            src="/icons/list-blue.svg"
-            alt="Cadastre-se"
-          />
+        <Button class="white" href="/cadastro" src="/icons/list.svg">
           Cadastre-se
         </Button>
       </div>
@@ -57,20 +47,10 @@ import Button from "./Button.astro";
       </div>
     </nav>
     <div class="header-cta">
-      <Button class="primary">
-        <img
-          class="header-cta__img"
-          src="/icons/envelope-white.svg"
-          alt="Entre em contato"
-        />
+      <Button class="primary" href="#contato" src="/icons/envelope.svg">
         Entre em contato
       </Button>
-      <Button class="white">
-        <img
-          class="nav-cta__img"
-          src="/icons/list-blue.svg"
-          alt="Cadastre-se"
-        />
+      <Button class="white" href="/cadastro" src="/icons/list.svg">
         Cadastre-se
       </Button>
     </div>
@@ -89,6 +69,7 @@ import Button from "./Button.astro";
   header {
     display: flex;
     justify-content: center;
+    background-color: #fff;
   }
 
   .header-wrapper {
@@ -113,13 +94,32 @@ import Button from "./Button.astro";
 
     .header-nav__ul {
       display: flex;
-      gap: 3.75vw;
+      gap: 3vw;
 
-      li a {
-        color: var(--color-dark);
-        text-decoration: none;
-        font-size: 1.125rem;
-        font-weight: 500;
+      li {
+        &:hover {
+          a {
+            color: var(--blue-primary);
+            position: relative;
+
+            &::before {
+              content: url("/icons/drop.svg");
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -2.5rem;
+              opacity: 0;
+              animation: drop-animation 0.3s forwards;
+            }
+          }
+        }
+
+        a {
+          color: var(--color-dark);
+          text-decoration: none;
+          font-size: 1.125rem;
+          font-weight: 500;
+        }
       }
 
       .header-nav__item {
@@ -151,6 +151,7 @@ import Button from "./Button.astro";
     width: 100%;
     z-index: 2;
     height: calc(100vh - 92px);
+    background-color: white;
 
     .header-nav__ul {
       flex-direction: column;
@@ -162,11 +163,6 @@ import Button from "./Button.astro";
   .header-cta,
   .nav-cta {
     display: none;
-    .header-cta__img,
-    .nav-cta__img {
-      height: 16px;
-      margin-right: 0.75rem;
-    }
   }
 
   .header-menu__button {
@@ -209,6 +205,17 @@ import Button from "./Button.astro";
     }
   }
 
+  @keyframes drop-animation {
+    from {
+      top: -2.5rem;
+      opacity: 0;
+    }
+    to {
+      top: -1.25rem;
+      opacity: 1;
+    }
+  }
+
   @media screen and (min-width: 900px) {
     .header-nav {
       display: block;
@@ -234,6 +241,7 @@ import Button from "./Button.astro";
   const btnMenuMobileImg = document.getElementById(
     "btnMenuMobileImg"
   ) as HTMLImageElement;
+  const logo = document.getElementById("headerLogo") as HTMLImageElement;
 
   const navMenu = document.getElementById("navMenu");
   const navLi = navMenu.querySelectorAll("li");
@@ -254,15 +262,18 @@ import Button from "./Button.astro";
 
   function updateLogo() {
     const screenSize = window.innerWidth;
-    const logo = document.getElementById("headerLogo") as HTMLImageElement;
 
-    if (screenSize < 1150) {
+    if (screenSize < 1200) {
       logo.src = "/logo-mobile.svg";
       return;
     }
 
     logo.src = "/logo-fullsize.svg";
   }
+
+  logo.addEventListener("click", () => {
+    window.location.assign("/");
+  });
 
   function toggleEventListeners(screenSize) {
     if (screenSize < 900) {

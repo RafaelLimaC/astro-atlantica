@@ -1,0 +1,276 @@
+---
+
+---
+
+<section id="contato">
+  <div class="contact">
+    <div class="contact-form">
+      <h6>Tem alguma dúvida?<br />Entre em contato</h6>
+      <form action="https://formspree.io/f/xyzggqyo" method="POST">
+        <input
+          type="text"
+          name="Nome"
+          placeholder="Nome"
+          minlength="3"
+          required
+        />
+        <input type="email" name="Email" placeholder="Email" required />
+        <input
+          type="tel"
+          name="Telefone"
+          placeholder="Telefone"
+          minlength="14"
+          maxlength="15"
+          id="telefone"
+          required
+        />
+        <input
+          type="text"
+          name="Mensagem"
+          placeholder="Mensagem"
+          minlength="3"
+          required
+        />
+        <select
+          name="Como prefere ser contactado?"
+          required
+          aria-label="Tipo de contato"
+        >
+          <option value="" disabled selected
+            >Como prefere ser contactado?</option
+          >
+          <option value="Whatsapp">Whatsapp</option>
+          <option value="Email">Email</option>
+          <option value="Ligacao">Ligação</option>
+        </select>
+        <input class="submit" type="submit" value="Enviar mensagem" />
+      </form>
+    </div>
+    <div class="contact-info">
+      <div class="contact-info__wrapper">
+        <img src="/icons/big-phone.svg" alt="" />
+        <div class="contact-info__text">
+          <p>Telefone</p>
+          <span>+55 (22) 3081-2840</span>
+        </div>
+      </div>
+      <div class="contact-info__wrapper">
+        <img src="/icons/big-envelope.svg" alt="" />
+        <div class="contact-info__text">
+          <p>Email</p>
+          <span>contato@distribuidoraatlantico.com</span>
+        </div>
+      </div>
+      <div class="contact-info__wrapper">
+        <img src="/icons/big-location.svg" alt="" />
+        <div class="contact-info__text">
+          <p>Endereço</p>
+          <span>R. Sebastião Lopes da Silva, 152 - Riviera - 27937-560</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    background-image: url("/contact-background.webp");
+    background-position: 83% 700px;
+
+    padding: 15rem 0 5rem;
+
+    .contact {
+      display: flex;
+      max-width: 102rem;
+      width: 100%;
+      margin: 0 auto;
+      gap: 5rem;
+
+      &-form {
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.17) 0px 7px 24px 0px;
+        padding: 4.5rem 1.5rem 6rem;
+        width: 100%;
+
+        h6 {
+          font-size: 1.5rem;
+          text-align: center;
+          font-weight: 700;
+          line-height: 1.5;
+          margin-bottom: 2.5rem;
+          color: var(--color-dark);
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+
+          input,
+          select {
+            border: 2px solid #d4d4d2;
+            color: var(--color-gray);
+            padding: 1rem 1.25rem;
+            width: 100%;
+            font-size: 0.875rem;
+            border-radius: 999px;
+          }
+
+          input:focus,
+          select:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+          }
+
+          input::placeholder,
+          select::placeholder {
+            color: var(--color-gray);
+            font-family: "Poppins", sans-serif;
+          }
+
+          input:valid,
+          select:valid {
+            border-color: #88fbd2;
+          }
+
+          input:invalid:not(:placeholder-shown) {
+            border-color: #e63838;
+            background: url("/icons/contact-error.svg") no-repeat right 20px
+              center;
+            background-size: 15px;
+          }
+
+          input:first-child {
+            background: url("/icons/contact-user.svg") no-repeat right 20px
+              center;
+            background-size: 15px;
+          }
+
+          input:nth-child(2) {
+            background: url("/icons/contact-envelope.svg") no-repeat right 20px
+              center;
+            background-size: 15px;
+          }
+
+          input:nth-child(3) {
+            background: url("/icons/contact-phone.svg") no-repeat right 20px
+              center;
+            background-size: 15px;
+          }
+
+          select {
+            background: url("/icons/chevron-down.svg") no-repeat right 20px
+              center;
+            background-size: 15px;
+            appearance: none;
+          }
+
+          .submit {
+            background-color: var(--blue-primary);
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 20px;
+
+            &:hover {
+              background-color: var(--blue-secondary);
+            }
+          }
+        }
+      }
+
+      &-info {
+        display: none;
+
+        .contact-info__wrapper {
+          background-color: white;
+          padding: 0.875rem;
+          padding-right: 2rem;
+          border-radius: 1rem;
+
+          display: flex;
+          gap: 2rem;
+          width: fit-content;
+
+          .contact-info__text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            p {
+              font-size: 1.125rem;
+              font-weight: bold;
+              color: var(--color-dark);
+            }
+
+            span {
+              font-size: 1.125rem;
+              color: var(--color-gray);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    section {
+      padding: 6rem 1rem 4.5rem;
+      background-size: cover;
+      background-position: center;
+
+      .contact {
+        &-form {
+          padding: 4.5rem 7rem;
+          max-width: calc(325px + 14rem);
+          border-radius: 2rem;
+        }
+
+        &-info {
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    section {
+      .contact {
+        &-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  //codigo de vida real!!!!!!
+  const inputTelefone = document.getElementById("telefone") as HTMLInputElement;
+
+  inputTelefone.addEventListener("keydown", (e) => {
+    const formattedPhone = formatCell((e.target as HTMLInputElement).value);
+    inputTelefone.value = formattedPhone;
+  });
+
+  const formatCell = (value) => {
+    let inputValue = value.replace(/\D/g, "");
+
+    if (inputValue.length > 2) {
+      inputValue = `(${inputValue.slice(0, 2)}) ${inputValue.slice(2)}`;
+    }
+
+    if (inputValue.length > 10) {
+      inputValue = `${inputValue.slice(0, 10)}-${inputValue.slice(10)}`;
+    }
+
+    if (inputValue.length > 15) {
+      inputValue = inputValue.slice(0, 15);
+    }
+
+    return inputValue;
+  };
+</script>

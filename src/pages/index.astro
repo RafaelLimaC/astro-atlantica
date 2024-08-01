@@ -1,6 +1,15 @@
 ---
+import About from "../components/About.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Depoimentos from "../components/Depoimentos.astro";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import HeroCTA from "../components/HeroCTA.astro";
+import InfiniteSlider from "../components/InfiniteSlider.astro";
+import MiniCTA from "../components/MiniCTA.astro";
+import OurTeam from "../components/OurTeam.astro";
+import Timeline from "../components/Timeline.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -8,7 +17,89 @@ import Layout from "../layouts/Layout.astro";
   <Header />
   <main>
     <HeroCTA />
+    <InfiniteSlider />
+    <Timeline />
+    <MiniCTA />
+    <About />
+    <OurTeam />
+    <ContactCTA />
+    <Depoimentos />
+    <ContactForm />
+    <div class="float-icons">
+      <div class="float-icons__content">
+        <button onclick="topFunction()" id="topBtn" aria-label="Back to top">
+          <img src="/icons/arrow-up.svg" alt="" />
+        </button>
+        <button>
+          <a href="https://wa.me/552230812840" target="_blank">
+            <img src="/icons/whatsapp.svg" alt="Ícone do Whatsapp" />
+          </a>
+        </button>
+      </div>
+    </div>
   </main>
+  <Footer />
 </Layout>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .float-icons {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 1rem;
+    z-index: 2;
+
+    &__content {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        width: 66px;
+        height: 66px;
+        border: none;
+        border-radius: 1.25rem;
+        cursor: pointer;
+        box-shadow: 0px 3px 6px #00000033;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button:first-child {
+        background-color: var(--blue-primary);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+
+      button:last-child {
+        background-color: #32d951;
+      }
+    }
+  }
+</style>
+
+<script>
+  const topBtn = document.getElementById("topBtn");
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      topBtn.style.opacity = "1";
+      topBtn.style.pointerEvents = "auto";
+    } else {
+      topBtn.style.opacity = "0";
+      topBtn.style.pointerEvents = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+  topBtn.addEventListener("click", topFunction);
+</script>

@@ -1,0 +1,134 @@
+---
+
+---
+
+<section id="equipe">
+  <h4>Nossa Equipe de Especialistas</h4>
+  <div class="team">
+    <div class="team-cards">
+      <img class="team-cards__image" src="/time/milena-monsores.webp" alt="" />
+      <div class="team-cards__info">
+        <p>Milena Monsores</p>
+        <span>Farmacêutica</span>
+        <div class="team-cards__info--social">
+          <a target="_blank" href="https://wa.me/5522998751478">
+            <img src="/time/telefone.svg" alt="Telefone" />
+          </a>
+          <a target="_blank" href="mailto:farmaceutica@novamedmacae.com">
+            <img src="/time/email.svg" alt="Email" />
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/millena-m/">
+            <img src="/time/linkedin.svg" alt="Linkedin" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="team-cards">
+      <img class="team-cards__image" src="/time/lais-loureiro.webp" alt="" />
+      <div class="team-cards__info">
+        <p>Laís Loureiro</p>
+        <span>Financeiro</span>
+        <div class="team-cards__info--social">
+          <a target="_blank" href="https://wa.me/5522998641258">
+            <img src="/time/telefone.svg" alt="Telefone" />
+          </a>
+          <a target="_blank" href="mailto:financeiro@novamedmacae.com">
+            <img src="/time/email.svg" alt="Email" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/la%C3%ADs-loureiro-figueir%C3%B3-ara%C3%BAjo-047054225/"
+          >
+            <img src="/time/linkedin.svg" alt="Linkedin" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="team-cards">
+      <img class="team-cards__image" src="/time/josiani-da-silva.webp" alt="" />
+      <div class="team-cards__info">
+        <p>Josiani da Silva</p>
+        <span>Compras</span>
+        <div class="team-cards__info--social">
+          <a target="_blank" href="https://wa.me/5522998530104">
+            <img src="/time/telefone.svg" alt="Telefone" />
+          </a>
+          <a target="_blank" href="mailto:Comercial2@novamedmacae.com">
+            <img src="/time/email.svg" alt="Email" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/josiani-silva-670422168/"
+          >
+            <img src="/time/linkedin.svg" alt="Linkedin" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 3rem 0;
+
+    h4 {
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 2rem 0 1rem 0;
+      color: var(--color-dark);
+      text-align: center;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-cards {
+        overflow: hidden;
+        width: fit-content;
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+
+          p {
+            font-size: 1.5rem;
+            color: var(--color-dark);
+            font-weight: 700;
+          }
+
+          span {
+            font-size: 1.125rem;
+            color: var(--color-dark);
+            font-weight: 400;
+          }
+
+          &--social {
+            display: flex;
+            gap: 0.65rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    section {
+      padding: 3rem 0 10rem 0;
+
+      h4 {
+        font-size: 3.25rem;
+        font-weight: 600;
+        padding: 5rem 0;
+      }
+    }
+  }
+</style>

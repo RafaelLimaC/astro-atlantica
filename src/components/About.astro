@@ -1,0 +1,226 @@
+---
+import Button from "./Button.astro";
+---
+
+<section id="sobre">
+  <div class="second-cta">
+    <div class="second-cta__text">
+      <h2>Atendimento Humanizado, Personalizado e Transparente</h2>
+      <p>
+        Nosso principal objetivo é a humanização em todas as nossas tratativas,
+        associada a inovações em logística. Monitoramos e auxiliamos o processo
+        de ponta a ponta, trabalhando com grandes indústrias do mercado
+        farmacêutico. Oferecemos uma gama de produtos com agilidade e segurança
+        em todas as entregas.
+      </p>
+      <ul>
+        <li>
+          <img src="/ul-img.svg" alt="" />
+          <div>
+            <p>Atendimento Personalizado</p>
+            <span>Suporte dedicado e comunicação transparente</span>
+          </div>
+        </li>
+        <li>
+          <img src="/ul-img.svg" alt="" />
+          <div>
+            <p>Método Just in Time</p>
+            <span>Entrega eficiente que supre a demanda real</span>
+          </div>
+        </li>
+        <li>
+          <img src="/ul-img.svg" alt="" />
+          <div>
+            <p>Inovação Contínua</p>
+            <span>Buscamos sempre novas soluções e produtos</span>
+          </div>
+        </li>
+      </ul>
+      <div class="second-cta__text__buttons">
+        <Button class="primary" href="#contato" src="/icons/envelope.svg">
+          Entre em contato
+        </Button>
+        <Button class="white" href="/cadastro" src="/icons/list.svg">
+          Cadastre-se
+        </Button>
+      </div>
+    </div>
+    <img
+      class="second-cta__image"
+      src="/secondheroimg.webp"
+      alt="Distribuição de material hospitalar"
+    />
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .second-cta {
+    max-width: 102rem;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 2rem;
+
+    &__text {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      max-width: 800px;
+      font-weight: 600;
+
+      h2 {
+        font-size: 2rem;
+        color: var(--color-dark);
+        line-height: 1.2;
+        text-align: left;
+        font-weight: 700;
+      }
+
+      p {
+        color: var(--color-gray);
+        line-height: 2rem;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+
+      ul {
+        padding: 1rem 0 2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          flex-direction: column;
+
+          img {
+            margin-top: -0.5rem;
+          }
+
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+
+            p {
+              text-align: center;
+              font-size: 1.75rem;
+              font-weight: 700;
+              line-height: 1.5;
+              color: var(--color-dark);
+            }
+
+            span {
+              text-align: center;
+              font-size: 1.125rem;
+              color: var(--color-gray);
+              font-weight: 400;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+
+      &__buttons {
+        display: flex;
+        gap: 1.125rem;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          height: 16px;
+          margin-right: 0.75rem;
+        }
+      }
+    }
+
+    &__image {
+      display: block;
+      max-height: 375px;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .second-cta {
+      margin-top: 5rem;
+      align-items: start;
+
+      &__text {
+        h2 {
+          font-size: 3.25rem;
+          font-weight: 600;
+          max-width: 40ch;
+        }
+
+        p {
+          font-size: 1.125rem;
+        }
+
+        ul {
+          padding: 1rem 0 2rem 0;
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+
+          li {
+            flex-direction: row;
+
+            img {
+              margin-top: -0.5rem;
+            }
+
+            div {
+              align-items: start;
+              p {
+                font-size: 2rem;
+                text-align: left;
+              }
+
+              span {
+                font-size: 1.125rem;
+                text-align: left;
+              }
+            }
+          }
+        }
+
+        &__buttons {
+          flex-direction: row;
+          gap: 0.5rem;
+          margin-bottom: 5rem;
+        }
+      }
+
+      &__image {
+        position: absolute;
+        left: max(800px, 40%);
+        top: 0;
+        max-height: unset;
+        margin-left: 0;
+      }
+    }
+  }
+</style>

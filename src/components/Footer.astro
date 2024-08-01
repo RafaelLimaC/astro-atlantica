@@ -1,0 +1,280 @@
+---
+import Button from "./Button.astro";
+---
+
+<footer>
+  <div class="footer">
+    <div class="footer-info">
+      <div class="footer-info__content primeiro">
+        <img src="/logo-footer.svg" alt="Atlântico" />
+        <p>
+          A Distribuidora Atlântico Macaé é especialista em soluções de
+          distribuição de medicamentos e insumos hospitalares.
+        </p>
+        <div>
+          <Button class="primary" href="#contato" src="/icons/envelope.svg">
+            Entre em contato
+          </Button>
+          <Button
+            class="white-bg__blue-text"
+            href="/cadastro"
+            src="/icons/list.svg"
+          >
+            Cadastre-se
+          </Button>
+        </div>
+      </div>
+      <div class="footer-info__content segundo">
+        <h6>Menu</h6>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-info__content terceiro">
+        <h6>Endereço</h6>
+        <p>
+          Rua Sebastião Lopes da Silva, 152 - Riviera - Macaé, RJ - CEP
+          27937-560
+        </p>
+      </div>
+      <div class="footer-info__content quarto">
+        <h6>Contato</h6>
+        <ul>
+          <li>contato@distribuidoraatlantico.com</li>
+          <li>+55 (22) 3081-2840</li>
+          <li>+55 (22) 99864-1258</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-rigths">
+      <span>
+        © 2024 Distribuidora Atlântico Macaé. Todos direitos reservados
+      </span>
+      <div>
+        <a href=""><img src="/icons/facebook.svg" alt="Página Facebook" /></a>
+        <a href=""><img src="/icons/instagram.svg" alt="Página Instagram" /></a>
+        <a href=""><img src="/icons/linkedin.svg" alt="Página Linkedin" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  footer {
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 3rem 1rem 1.5rem;
+    max-width: 102rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        h6 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1.5;
+          color: white;
+        }
+      }
+
+      .primeiro {
+        img {
+          height: 45px;
+          width: fit-content;
+        }
+
+        p {
+          font-size: 0.875rem;
+          color: var(--color-gray);
+          line-height: 1.8;
+          max-width: 36ch;
+          text-align: center;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 0.65rem;
+          align-items: center;
+        }
+      }
+
+      .segundo {
+        nav {
+          ul {
+            display: flex;
+            gap: 1rem;
+            flex-direction: row;
+            li {
+              a {
+                text-decoration: none;
+                color: var(--color-gray);
+                font-size: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+
+      .terceiro {
+        font-size: 0.875rem;
+        color: var(--color-gray);
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .quarto {
+        ul {
+          display: flex;
+          gap: 0.5rem;
+          flex-direction: column;
+
+          li {
+            font-size: 0.875rem;
+            color: var(--color-gray);
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &-rigths {
+      padding-top: 1.5rem;
+      border-top: 1px solid #707070;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+
+      span {
+        font-size: 0.875rem;
+        color: var(--color-gray);
+        text-align: center;
+      }
+
+      div {
+        display: flex;
+        gap: 0.65rem;
+
+        img {
+          height: 26px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .footer {
+      padding: 8rem 1rem 3rem;
+      gap: 6rem;
+
+      &-info {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: unset;
+        gap: 3rem;
+
+        &__content {
+          align-items: unset;
+          gap: 3rem;
+
+          h6 {
+            padding: 10px 0;
+          }
+        }
+
+        .primeiro {
+          img {
+            height: 56px;
+          }
+
+          p {
+            text-align: left;
+            font-size: 1.125rem;
+          }
+
+          div {
+            flex-direction: row;
+          }
+        }
+
+        .segundo {
+          nav {
+            ul {
+              display: flex;
+              gap: 2rem;
+              flex-direction: column;
+              li {
+                a {
+                  font-size: 1.125rem;
+                }
+              }
+            }
+          }
+        }
+
+        .terceiro {
+          font-size: 1.125rem;
+          max-width: 26ch;
+          text-align: left;
+        }
+
+        .quarto {
+          ul {
+            gap: 2rem;
+
+            li {
+              font-size: 1.125rem;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      &-rigths {
+        padding-top: 3rem;
+
+        flex-direction: row;
+        gap: 1.25rem;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+          font-size: 1.125rem;
+          text-align: left;
+        }
+
+        div {
+          img {
+            height: 36px;
+          }
+        }
+      }
+    }
+  }
+</style>
