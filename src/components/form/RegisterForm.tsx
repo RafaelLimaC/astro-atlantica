@@ -1,9 +1,9 @@
-import { useForm } from "react-hook-form";
 import { useForm as useFormspree } from "@formspree/react";
-import { Input } from "../input/Input";
-import { PatternInput } from "../input/PatternInput";
-import { NumericInput } from "../input/NumericInput";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { Input } from "../input/Input";
+import { NumericInput } from "../input/NumericInput";
+import { PatternInput } from "../input/PatternInput";
 
 export default function RegisterForm() {
   const [serverState, sendToFormspree] = useFormspree(
@@ -255,7 +255,7 @@ export default function RegisterForm() {
             required
           />
 
-          <div className="col-auto flex items-center gap-1 text-gray8b md:col-span-3 md:gap-[2.375rem]">
+          <div className="col-auto flex flex-col md:items-center md:flex-row gap-1 text-gray8b md:col-span-3 md:gap-[2.375rem]">
             <p className="text-sm">
               Metodo de Pagamento<span className="text-sm text-red-500">*</span>
               :
@@ -634,7 +634,7 @@ export default function RegisterForm() {
             required
           />
 
-          <p>
+          <p className="overflow-x-scroll overflow-y-hidden">
             <span className="font-bold text-[#e63838]">ATENÇÃO!</span> Estou
             ciente de que para completar o meu cadastro de cliente deverão ser
             enviadas cópias de todos os documentos para o e-mail
