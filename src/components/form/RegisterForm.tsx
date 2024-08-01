@@ -12,7 +12,7 @@ export default function RegisterForm() {
   const { register, handleSubmit } = useForm();
 
   if (serverState.succeeded) {
-    toast("Wow so easy !");
+    toast("Formulário Enviado");
   }
 
   return (
