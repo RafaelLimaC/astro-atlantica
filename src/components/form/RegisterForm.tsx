@@ -12,7 +12,7 @@ export default function RegisterForm() {
   const { register, handleSubmit } = useForm();
 
   if (serverState.succeeded) {
-    toast("Formulário Enviado");
+    toast.success("Formulário Enviado");
   }
 
   return (
@@ -634,7 +634,7 @@ export default function RegisterForm() {
             required
           />
 
-          <p className="overflow-x-scroll overflow-y-hidden">
+          <p className="overflow-x-scroll overflow-y-hidden md:overflow-hidden">
             <span className="font-bold text-[#e63838]">ATENÇÃO!</span> Estou
             ciente de que para completar o meu cadastro de cliente deverão ser
             enviadas cópias de todos os documentos para o e-mail

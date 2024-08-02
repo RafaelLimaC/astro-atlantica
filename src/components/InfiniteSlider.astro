@@ -5,25 +5,25 @@
 <div class="slider">
   <div class="slide-track">
     <div class="slide">
-      <img src="/infinite-slider/Accumed-logo.png" alt="" />
+      <img src="/infinite-slider/Accumed-logo.png" alt="Accumed" />
     </div>
     <div class="slide">
-      <img src="/infinite-slider/Cremer-logo.png" alt="" />
+      <img src="/infinite-slider/Cremer-logo.png" alt="Cremer" />
     </div>
     <div class="slide">
-      <img src="/infinite-slider/Equiplex-logo.png" alt="" />
+      <img src="/infinite-slider/Equiplex-logo.png" alt="Equiplex" />
     </div>
     <div class="slide">
-      <img src="/infinite-slider/Fresenius_Kabi-logo.png" alt="" />
+      <img src="/infinite-slider/Fresenius_Kabi-logo.png" alt="Fresenius" />
     </div>
     <div class="slide">
-      <img src="/infinite-slider/Geolab-logo.png" alt="" />
+      <img src="/infinite-slider/Geolab-logo.png" alt="Geolab" />
     </div>
     <div class="slide">
-      <img src="/infinite-slider/Hipolabor-logo.png" alt="" />
+      <img src="/infinite-slider/Hipolabor-logo.png" alt="Hipolabor" />
     </div>
     <div class="slide">
-      <img src="/infinite-slider/Kolplast-logo.png" alt="" />
+      <img src="/infinite-slider/Kolplast-logo.png" alt="Kolplast" />
     </div>
   </div>
 </div>
@@ -51,11 +51,16 @@
       animation: scroll 20s linear infinite;
       display: flex;
       gap: 5rem;
-    }
 
-    .slide {
-      display: flex;
-      align-items: center;
+      .slide {
+        display: flex;
+        align-items: center;
+
+        img {
+          max-width: 240px;
+          max-height: 72px;
+        }
+      }
     }
   }
 
