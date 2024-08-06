@@ -7,7 +7,7 @@ import { PatternInput } from "../input/PatternInput";
 
 export default function RegisterForm() {
   const [serverState, sendToFormspree] = useFormspree(
-    import.meta.env.PUBLIC_FORMSPREE_ID!,
+    "xrbzqnkv",
   );
   const { register, handleSubmit } = useForm();
 
