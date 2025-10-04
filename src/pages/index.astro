@@ -27,12 +27,27 @@ import Layout from "../layouts/Layout.astro";
     <ContactForm />
     <div class="float-icons">
       <div class="float-icons__content">
-        <button onclick="topFunction()" id="topBtn" aria-label="Back to top">
+        <button
+          class="top"
+          onclick="topFunction()"
+          id="topBtn"
+          aria-label="Back to top"
+        >
           <img src="/icons/arrow-up.svg" alt="" />
         </button>
-        <button>
+        <button class="whatsapp">
           <a href="https://wa.me/552230812840" target="_blank">
             <img src="/icons/whatsapp.svg" alt="Ícone do Whatsapp" />
+          </a>
+        </button>
+        <button class="youtube">
+          <a href="https://www.youtube.com/" target="_blank">
+            <img src="/icons/youtube.svg" alt="Ícone do Youtube" />
+          </a>
+        </button>
+        <button class="instagram">
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="/icons/instagram-float.svg" alt="Ícone do Instagram" />
           </a>
         </button>
       </div>
@@ -64,15 +79,30 @@ import Layout from "../layouts/Layout.astro";
         align-items: center;
       }
 
-      button:first-child {
+      .top {
         background-color: var(--blue-primary);
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.25s;
       }
 
-      button:last-child {
+      .whatsapp {
         background-color: #32d951;
+      }
+
+      .youtube {
+        background-color: #ff0000;
+      }
+
+      .instagram {
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
       }
     }
   }
